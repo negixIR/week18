@@ -1,199 +1,50 @@
-/* تنظیمات کلی */
-body {
-  font-family: 'Vazir', sans-serif;
-  direction: rtl;
-  background-color: #f4f6f8;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
+/* پایه */
+body { font-family: 'Vazir', sans-serif; direction: rtl; background: #f4f6f8; margin: 0; color: #333; }
+.page { padding: 2rem; max-width: 1000px; margin: auto; }
 
 /* هدر */
-.header {
-  background-color: #0077cc;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.header { background: #0077cc; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.header h2 { margin: 0; }
+.header nav a { color: #fff; text-decoration: none; margin-right: 1rem; font-weight: 600; }
+.header nav a.active { text-decoration: underline; }
 
-.header h2 {
-  margin: 0;
-}
+/* کارت / کانتینر */
+.card { background: #fff; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); padding: 1.2rem; }
 
-.header nav a {
-  color: white;
-  text-decoration: none;
-  margin-right: 1rem;
-  font-weight: bold;
-}
+/* تولبار بالا */
+.toolbar { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+.search { flex: 1; padding: 0.7rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
 
-.header nav a:hover {
-  text-decoration: underline;
-}
+/* دکمه‌ها */
+.btn { padding: 0.55rem 1rem; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95rem; }
+.btn-primary { background: #0077cc; color: #fff; }
+.btn-primary:hover { background: #005fa3; }
+.btn-danger { background: #d9534f; color: #fff; }
+.btn-danger:hover { background: #c13f3b; }
+.btn-secondary { background: #6c757d; color: #fff; }
+.btn-light { background: #eef3f7; color: #333; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-/* صفحه‌ها */
-.page {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
+/* فرم */
+.form input { display: block; width: 100%; padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+.error { color: #d9534f; font-size: 0.85rem; margin-top: -0.3rem; margin-bottom: 0.5rem; }
 
-/* فرم افزودن و ویرایش مخاطب */
-.form input {
-  display: block;
-  width: 100%;
-  padding: 0.7rem;
-  margin: 0.5rem 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
+/* جدول */
+.contact-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+.contact-table th, .contact-table td { padding: 0.9rem; border-bottom: 1px solid #eee; text-align: right; vertical-align: middle; }
+.contact-table th { background: #f0f4f8; font-weight: 700; }
+.contact-table tr:hover { background: #fafcfe; }
 
-.form button {
-  background-color: #0077cc;
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+/* منو سه‌نقطه‌ای داخل ردیف (افقی) */
+.menu-inline { position: relative; display: inline-block; }
+.dots { background: none; border: none; font-size: 1.6rem; cursor: pointer; line-height: 1; }
+.menu-row { display: inline-flex; gap: 0.4rem; margin-right: 0.6rem; }
+.menu-row .btn { padding: 0.4rem 0.7rem; }
 
-.form button:hover {
-  background-color: #005fa3;
-}
+/* مدال */
+.modal { position: fixed; top: 30%; left: 50%; transform: translate(-50%, -30%); background: #fff; padding: 1.2rem; border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.2); z-index: 200; width: 320px; text-align: center; }
+.modal p { margin-bottom: 1rem; font-size: 1.02rem; }
+.modal-actions { display: flex; justify-content: center; gap: 0.6rem; }
 
-.error {
-  color: red;
-  font-size: 0.85rem;
-  margin-top: -0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-/* جستجو و پیام موفقیت */
-.search {
-  width: 100%;
-  padding: 0.7rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-.success {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 0.7rem;
-  border: 1px solid #c3e6cb;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-/* جدول مخاطبین */
-.contact-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-.contact-table th,
-.contact-table td {
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-  text-align: right;
-}
-
-.contact-table th {
-  background-color: #f0f4f8;
-  font-weight: bold;
-}
-
-.contact-table tr:hover {
-  background-color: #f9fbfc;
-}
-
-/* منوی سه‌نقطه‌ای داخل ردیف */
-.menu-inline {
-  position: relative;
-  display: inline-block;
-}
-
-.menu-inline button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.menu-inline .menu {
-  position: absolute;
-  top: 0;
-  right: 2rem;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 100;
-  min-width: 120px;
-}
-
-.menu-inline .menu button {
-  display: block;
-  width: 100%;
-  padding: 0.7rem 1rem;
-  background: none;
-  border: none;
-  text-align: right;
-  cursor: pointer;
-  font-size: 0.95rem;
-}
-
-.menu-inline .menu button:hover {
-  background-color: #f0f0f0;
-}
-
-/* مدال تأیید عملیات */
-.modal {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  z-index: 200;
-  text-align: center;
-}
-
-.modal p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.modal button {
-  padding: 0.6rem 1.2rem;
-  margin: 0 0.5rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.modal button:first-of-type {
-  background-color: #d9534f;
-  color: white;
-}
-
-.modal button:last-of-type {
-  background-color: #6c757d;
-  color: white;
-}
+/* پیام موفقیت */
+.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 8px; padding: 0.7rem; margin-bottom: 1rem; text-align: center; }

@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
+  const { pathname } = useLocation();
   return (
-    <div className="header">
+    <header className="header">
       <h2>📒 دفترچه مخاطبین</h2>
       <nav>
-        <Link to="/">لیست مخاطبین</Link>
-        <Link to="/add">➕ افزودن مخاطب</Link>
+        <Link className={pathname === '/' ? 'active' : ''} to="/">لیست مخاطبین</Link>
+        <Link className={pathname === '/add' ? 'active' : ''} to="/add">➕ افزودن مخاطب</Link>
       </nav>
-    </div>
+    </header>
   );
 }
 

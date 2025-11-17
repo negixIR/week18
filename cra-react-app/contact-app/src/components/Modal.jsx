@@ -4,8 +4,10 @@ function Modal({ message, onConfirm, onCancel }) {
   return (
     <div className="modal">
       <p>{message}</p>
-      <button onClick={onConfirm}>تایید</button>
-      <button onClick={onCancel}>لغو</button>
+      <div className="modal-actions">
+        <button className="btn btn-danger" onClick={onConfirm}>تایید</button>
+        <button className="btn btn-secondary" onClick={onCancel}>لغو</button>
+      </div>
     </div>
   );
 }
